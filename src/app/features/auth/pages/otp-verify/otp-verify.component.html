@@ -1,0 +1,29 @@
+<app-auth-wrapper [customClasses]="['auth-otp-wrapper-card']">  
+  <app-icon name="phone" [size]="{width: 'auto', height: 'auto'}"></app-icon>
+  <app-auth-header
+    [title]="'Verify your phone'"
+    [subTitle]="'Enter the verification code we sent to <br><span>' + email() + '</span>'"
+    [titleCustomClasses]="['auth-otp-title']"
+    [subTitleCustomClasses]="['auth-otp-subtitle']"
+    [allowHtml]="true"
+  ></app-auth-header>
+  
+  <app-auth-form
+    [submitText]="'Continue'"
+    [loading]="isLoading()"
+    [disabled]="!isValid"
+    (formSubmit)="onSubmit()"
+  >
+    <app-otp-input
+      [formControl]="otpControl"
+      [length]="6"
+      [label]="''"
+      (otpComplete)="onOtpComplete($event)"
+    />
+
+    <app-resend-otp
+      [isResending]="isResending()"
+      (resendClicked)="resendOtp()"
+    />
+  </app-auth-form>
+</app-auth-wrapper>

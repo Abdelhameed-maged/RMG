@@ -1,0 +1,41 @@
+@if (isAuthenticated()) {
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button mat-icon-button (click)="navigate('/dashboard')">
+      <mat-icon>dashboard</mat-icon>
+    </button>
+    <span class="app-title" (click)="navigate('/dashboard')">RMG Application</span>
+    
+    <span class="spacer"></span>
+    
+    <button mat-button (click)="navigate('/dashboard')">
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+    <button mat-button (click)="navigate('/products')">
+      <mat-icon>inventory_2</mat-icon>
+      Products
+    </button>
+    <button mat-button (click)="navigate('/invoices')">
+      <mat-icon>receipt_long</mat-icon>
+      Invoices
+    </button>
+    
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+      {{ user()?.name || 'User' }}
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item disabled>
+        <mat-icon>email</mat-icon>
+        <span>{{ user()?.email }}</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+}
+
+<router-outlet />

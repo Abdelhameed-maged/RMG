@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'variables' as *;
+@use 'breakpoints' as *;
+@use 'material-theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, 'Inter', sans-serif;
+}
+
+:root {
+  // Colors - these are always accessible globally
+  --primary-color: #{$primary-color};
+  --primary-bg: #{$primary-bg};
+  --secondary-bg: #{$secondary-bg};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-tertiary: #{$text-tertiary};
+  --border-color: #{$border-color};
+  --error-color: #{$error-color};
+  --disabled-bg: #{$disabled-bg};
+  --separator-color: #{$separator-color};
+
+  // Border Radius
+  --lg-radius: #{$lg-radius};
+  --md-radius: #{$md-radius};
+  --sm-radius: #{$sm-radius};
+
+  // Font Sizes - base values, overridden by breakpoints
+  --font-xs: #{$font-xs};
+  --font-sm: #{$font-sm};
+  --font-base: #{$font-base};
+  --font-lg: #{$font-lg};
+  --font-xl: #{$font-xl};
+  --font-2xl: #{$font-2xl};
+  --font-3xl: #{$font-3xl};
+
+  // Font Weights
+  --font-light: #{$font-light};
+  --font-normal: #{$font-normal};
+  --font-medium: #{$font-medium};
+  --font-semibold: #{$font-semibold};
+  --font-bold: #{$font-bold};
+
+  // Spacing - base values, overridden by breakpoints
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+  --spacing-2xl: #{$spacing-2xl};
+  --spacing-3xl: #{$spacing-3xl};
+  --spacing-4xl: #{$spacing-4xl};
+  --spacing-5xl: #{$spacing-5xl};
+
+  // Padding - base values, overridden by breakpoints
+  --padding-xs: #{$padding-xs};
+  --padding-sm: #{$padding-sm};
+  --padding-md: #{$padding-md};
+  --padding-lg: #{$padding-lg};
+  --padding-xl: #{$padding-xl};
+  --padding-2xl: #{$padding-2xl};
+  --padding-3xl: #{$padding-3xl};
+  --padding-4xl: #{$padding-4xl};
+
+  // Component Heights - base values, overridden by breakpoints
+  --height-sm: #{$height-sm};
+  --height-md: #{$height-md};
+  --height-lg: #{$height-lg};
+
+  // Transitions
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+
+  // Apply responsive variable overrides
+  @include apply-responsive-vars;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+

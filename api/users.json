@@ -1,0 +1,35 @@
+export default function handler(req, res) {
+  const users = [
+    {
+      "id": 1,
+      "email": "admin@rmg.com",
+      "password": "admin123",
+      "name": "Admin User",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "user@rmg.com",
+      "password": "user123",
+      "name": "Regular User",
+      "role": "user"
+    }
+  ];
+
+  if (req.method === 'GET') {
+    const { email, password } = req.query;
+    
+    if (email && password) {
+      const user = users.find(u => u.email === email && u.password === password);
+      if (user) {
+        res.status(200).json([user]);
+      } else {
+        res.status(200).json([]);
+      }
+    } else {
+      res.status(200).json(users);
+    }
+  } else {
+    res.status(405).json({ message: 'Method not allowed' });
+  }
+}

@@ -1,0 +1,7 @@
+<div class="auth-layout">
+  <div class="auth-container" [class]="'route-' + currentRoute()">
+<div class="auth-card {{ customClasses().join(' ') }}">
+    <ng-content></ng-content>
+</div>
+</div>
+</div>

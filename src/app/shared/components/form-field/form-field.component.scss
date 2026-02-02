@@ -1,0 +1,114 @@
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+
+  .input-label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.input-label {
+  font-family: 'Inter';
+  font-weight: var(--font-normal);
+  font-style: Regular;
+  font-size: var(--font-sm);
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: var(--text-primary);
+  
+  .required-indicator {
+    color: var(--error-color);
+    margin-left: var(--spacing-xs);
+  }
+}
+
+.input-field-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  height: var(--height-md);
+  opacity: 1;
+  border-radius: var(--sm-radius);
+  border-width: 1px;
+  padding: var(--padding-sm);
+  font-size: var(--font-sm);
+  font-family: 'Inter', sans-serif;
+  border: 1px solid #363843;
+  outline: none;
+  transition: all var(--transition-base);
+  background-color: #1F212A;
+  color: var(--text-primary);
+
+  &::placeholder {
+    color: #808290;
+    font-size: var(--font-sm);
+  }
+
+  &:focus {
+    border-color: var(--primary-bg) !important;
+    box-shadow: 0 0 0 3px rgba(0, 106, 230, 0.1);
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    border-color: var(--error-color);
+
+    &:focus {
+      border-color: var(--error-color);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+  }
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--padding-xs);
+  font-size: var(--font-lg);
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-base);
+  
+  &:hover {
+    color: var(--text-primary);
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.error-message {
+  font-size: var(--font-xs);
+  color: var(--error-color);
+  margin-top: calc(-1 * var(--spacing-sm));
+  min-height: 1em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}

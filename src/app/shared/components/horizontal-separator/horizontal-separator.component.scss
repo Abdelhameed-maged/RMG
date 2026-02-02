@@ -1,0 +1,30 @@
+.horizontal-separator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+      padding-bottom: var(--spacing-4xl);
+    
+    .horizontal-separator-left {
+        height: 1px;
+        background-color: var(--separator-color);
+    }
+    
+    .horizontal-separator-label {
+        color: var(--DarkMode-Grey-Grey-600, #808290);
+        text-align: center;
+        white-space: nowrap;
+        /* Body/B-11-12-400 */
+        font-family: Inter;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px; /* 109.091% */
+    }
+    
+    .horizontal-separator-right {
+        height: 1px;
+        background-color: var(--separator-color);
+    }
+}

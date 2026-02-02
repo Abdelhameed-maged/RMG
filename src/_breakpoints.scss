@@ -1,0 +1,188 @@
+// Breakpoint values
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Media query mixins
+@mixin xs {
+  @media (max-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin lg-down {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin xl-down {
+  @media (max-width: #{$breakpoint-xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$breakpoint-2xl}) {
+    @content;
+  }
+}
+
+// Custom range mixin
+@mixin between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// Responsive variable overrides
+// Usage: @include apply-responsive-vars;
+
+@mixin apply-responsive-vars {
+  // Extra Small (mobile) - max 480px
+  @include xs {
+    // Font sizes - smaller for mobile
+    --font-xs: 0.625rem;   // 10px
+    --font-sm: 0.75rem;    // 12px
+    --font-base: 0.875rem; // 14px
+    --font-lg: 1rem;       // 16px
+    --font-xl: 1.125rem;   // 18px
+    --font-2xl: 1.25rem;   // 20px
+    --font-3xl: 1.5rem;    // 24px
+
+    // Spacing - tighter on mobile
+    --spacing-xl: 0.75rem;    // 12px
+    --spacing-2xl: 1rem;      // 16px
+    --spacing-3xl: 1.25rem;   // 20px
+    --spacing-4xl: 1.5rem;    // 24px
+    --spacing-5xl: 1.875rem;      // 30px
+
+    // Padding - reduced for mobile
+    --padding-lg: 0.75rem;    // 12px
+    --padding-xl: 1rem;       // 16px
+    --padding-2xl: 1.25rem;   // 20px
+    --padding-3xl: 1.5rem;    // 24px
+    --padding-4xl: 2rem;      // 32px
+
+    // Component heights - slightly smaller
+    --height-sm: 1.75rem;     // 28px
+    --height-md: 2.25rem;     // 36px
+    --height-lg: 2.75rem;     // 44px
+  }
+
+  // Small (large mobile/tablet) - 640px+
+  @include sm {
+    // Font sizes - standard mobile+
+    --font-xs: 0.75rem;    // 12px
+    --font-sm: 0.875rem;   // 14px
+    --font-base: 1rem;     // 16px
+    --font-lg: 1.125rem;   // 18px
+    --font-xl: 1.25rem;    // 20px
+    --font-2xl: 1.5rem;    // 24px
+    --font-3xl: 1.875rem;  // 30px
+
+    // Spacing - default values
+    --spacing-xl: 1rem;       // 16px
+    --spacing-2xl: 1.25rem;   // 20px
+    --spacing-3xl: 1.5rem;    // 24px
+    --spacing-4xl: 1.875rem;      // 30px
+    --spacing-5xl: 3rem;      // 48px
+
+    // Padding - default
+    --padding-lg: 1rem;       // 16px
+    --padding-xl: 1.25rem;    // 20px
+    --padding-2xl: 1.5rem;    // 24px
+    --padding-3xl: 1.875rem;    // 30px
+    --padding-4xl: 2.5rem;    // 40px
+
+    // Component heights - default
+    --height-sm: 1.875rem;        // 30px
+    --height-md: 2.5rem;      // 40px
+    --height-lg: 3rem;        // 48px
+  }
+
+  // Medium (tablet) - 768px+
+  @include md {
+    // Font sizes - slightly larger
+    --font-lg: 1.125rem;   // 18px
+    --font-xl: 1.375rem;   // 22px
+    --font-2xl: 1.625rem;  // 26px
+    --font-3xl: 1.875rem;      // 30px
+
+    // Spacing - more generous
+    --spacing-4xl: 2.5rem;    // 40px
+    --spacing-5xl: 3.5rem;    // 56px
+
+    // Padding - increased
+    --padding-3xl: 1.875rem;    // 30px
+    --padding-4xl: 3rem;      // 48px
+  }
+
+  // Large (desktop) - 1024px+
+  @include lg {
+    // Font sizes - desktop optimized
+    --font-xl: 1.5rem;     // 24px
+    --font-2xl: 1.75rem;   // 28px
+    --font-3xl: 2.25rem;   // 36px
+
+    // Spacing - desktop comfortable
+    --spacing-5xl: 4rem;      // 64px
+
+    // Padding - generous desktop spacing
+    --padding-3xl: 1.875rem;    // 30px
+    --padding-4xl: 2.5rem;    // 56px
+
+    // Component heights - larger for desktop
+    --height-lg: 3.5rem;      // 56px
+  }
+
+  // Extra Large (large desktop) - 1280px+
+  @include xl {
+  
+  }
+
+  // 2XL (very large screens) - 1536px+
+  @include xxl {
+  
+  }
+}
+

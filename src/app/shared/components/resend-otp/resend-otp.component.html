@@ -1,0 +1,13 @@
+<div class="resend-section">
+  <span class="resend-text">Didn't receive the code?</span>
+  <app-primary-button 
+    type="button" 
+    class="resend-link" 
+    variant="link"
+    [loading]="isResending()"
+    [disabled]="isResending()"
+    (clicked)="onResendClick()"
+  >
+    Resend
+  </app-primary-button>
+</div>

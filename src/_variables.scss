@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Colors
+$primary-color: #006AE6;
+$primary-bg: #0B0C10;
+$secondary-bg: #0D0E12;
+$text-primary: #FFFFFF;
+$text-secondary: #9CA3AF;
+$text-tertiary: #6B7280;
+$border-color: #D1D5DB;
+$error-color: #EF4444;
+$disabled-bg: #F3F4F6;
+$separator-color:  #26272F;
+
+// Border Radius
+$lg-radius: 12px;
+$md-radius: 8px;
+$sm-radius: 6px;
+
+// Font Sizes
+$font-xs: 0.75rem;    // 12px
+$font-sm: 0.875rem;   // 14px
+$font-base: 1rem;     // 16px
+$font-lg: 1.125rem;   // 18px
+$font-xl: 1.25rem;    // 20px
+$font-2xl: 1.5rem;    // 24px
+$font-3xl: 1.875rem;  // 30px
+
+// Font Weights
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+// Spacing
+$spacing-xs: 0.125rem;   // 2px
+$spacing-sm: 0.25rem;    // 4px
+$spacing-md: 0.5rem;     // 8px
+$spacing-lg: 0.75rem;    // 12px
+$spacing-xl: 1rem;       // 16px
+$spacing-2xl: 1.25rem;   // 20px
+$spacing-3xl: 1.5rem;    // 24px
+$spacing-4xl: 2rem;      // 32px
+$spacing-5xl: 3rem;      // 48px
+
+// Padding
+$padding-xs: 0.5rem;     // 8px
+$padding-sm: 0.625rem;   // 10px
+$padding-md: 0.875rem;   // 14px
+$padding-lg: 1rem;       // 16px
+$padding-xl: 1.25rem;    // 20px
+$padding-2xl: 1.5rem;    // 24px
+$padding-3xl: 2rem;      // 32px
+$padding-4xl: 2.5rem;    // 40px
+
+// Component Heights
+$height-sm: 2rem;        // 32px
+$height-md: 2.5rem;      // 40px
+$height-lg: 3rem;        // 48px
+
+// Transitions
+$transition-fast: 0.15s;
+$transition-base: 0.2s;
+$transition-slow: 0.3s;

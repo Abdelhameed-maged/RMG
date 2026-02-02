@@ -1,0 +1,21 @@
+<app-auth-wrapper>
+  <app-auth-header
+    [title]="'Sign in'"
+    [subTitle]="'Sign in securely to  UFM  '"
+  ></app-auth-header>
+  <app-horizontal-separator [label]="'input '"></app-horizontal-separator>
+  <app-auth-form
+    [submitText]="'Next'"
+    [loading]="isLoading()"
+    [disabled]="!isValid"
+    (formSubmit)="onSubmit()"
+  >
+    <app-form-field
+      [formControl]="emailControl"
+      [label]="'Email'"
+      [placeholder]="'email@email.com'" 
+      [type]="'email'"
+      [required]="true"
+    />
+  </app-auth-form>
+</app-auth-wrapper>

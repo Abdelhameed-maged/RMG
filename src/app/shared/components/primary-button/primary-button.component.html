@@ -1,0 +1,13 @@
+<button
+  [type]="type()"
+  [disabled]="disabled() || loading()"
+  [class]="classes()"
+  (click)="onClick($event)"
+>
+  @if (loading()) {
+    <span class="spinner"></span>
+  }
+  <span [class.loading-content]="loading()">
+    <ng-content></ng-content>
+  </span>
+</button>

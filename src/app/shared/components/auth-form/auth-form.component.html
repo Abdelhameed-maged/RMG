@@ -1,0 +1,12 @@
+<form (submit)="onSubmit($event)" class="auth-form" novalidate>
+  <ng-content />
+  
+  <app-primary-button
+    [type]="'submit'"
+    [fullWidth]="true"
+    [loading]="loading()"
+    [disabled]="disabled()"
+  >
+    {{ submitText() }}
+  </app-primary-button>
+</form>

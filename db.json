@@ -1,0 +1,156 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@rmg.com",
+      "password": "admin123",
+      "name": "Admin User",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "email": "user@rmg.com",
+      "password": "user123",
+      "name": "Regular User",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Saudi Dates - Premium Ajwa",
+      "description": "Premium Ajwa dates from Madinah - 1kg box",
+      "price": 120.00,
+      "sku": "DATES-AJW-001",
+      "category": "Food & Beverages",
+      "stock": 150,
+      "createdAt": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Traditional Saudi Coffee Set",
+      "description": "Complete Saudi coffee set with dallah and cups",
+      "price": 299.00,
+      "sku": "COFFEE-SET-001",
+      "category": "Home & Kitchen",
+      "stock": 45,
+      "createdAt": "2026-01-16T10:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Arabian Oud Perfume",
+      "description": "Authentic Arabian oud perfume - 50ml",
+      "price": 450.00,
+      "sku": "PERF-OUD-001",
+      "category": "Perfumes & Cosmetics",
+      "stock": 75,
+      "createdAt": "2026-01-17T10:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Men's Thobe - White",
+      "description": "High-quality cotton thobe for men",
+      "price": 180.00,
+      "sku": "CLOTH-THB-001",
+      "category": "Clothing",
+      "stock": 120,
+      "createdAt": "2026-01-18T10:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Prayer Rug - Luxury Velvet",
+      "description": "Premium velvet prayer rug with Islamic design",
+      "price": 85.00,
+      "sku": "HOME-RUG-001",
+      "category": "Home & Decor",
+      "stock": 200,
+      "createdAt": "2026-01-19T10:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Arabic Calligraphy Wall Art",
+      "description": "Handcrafted Arabic calligraphy - Ayat Al-Kursi",
+      "price": 350.00,
+      "sku": "ART-CAL-001",
+      "category": "Home & Decor",
+      "stock": 30,
+      "createdAt": "2026-01-20T10:00:00Z"
+    },
+    {
+      "id": "7",
+      "name": "Zamzam Water - 5L",
+      "description": "Blessed Zamzam water from Makkah",
+      "price": 25.00,
+      "sku": "BEV-ZAM-001",
+      "category": "Food & Beverages",
+      "stock": 500,
+      "createdAt": "2026-01-21T10:00:00Z"
+    },
+    {
+      "id": "8",
+      "name": "Saudi Honey - Sidr",
+      "description": "Pure Sidr honey from Saudi Arabia - 500g",
+      "price": 280.00,
+      "sku": "FOOD-HON-001",
+      "category": "Food & Beverages",
+      "stock": 80,
+      "createdAt": "2026-01-22T10:00:00Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "1",
+      "invoiceNumber": "INV-2026-001",
+      "customerName": "Abdullah Al-Rashid",
+      "customerEmail": "abdullah.rashid@example.sa",
+      "items": [
+        {
+          "productId": "1",
+          "productName": "Saudi Dates - Premium Ajwa",
+          "quantity": 5,
+          "price": 120.00,
+          "total": 600.00
+        },
+        {
+          "productId": "7",
+          "productName": "Zamzam Water - 5L",
+          "quantity": 10,
+          "price": 25.00,
+          "total": 250.00
+        }
+      ],
+      "subtotal": 850.00,
+      "tax": 127.50,
+      "total": 977.50,
+      "status": "paid",
+      "createdAt": "2026-01-20T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "invoiceNumber": "INV-2026-002",
+      "customerName": "Fatima Al-Zahrani",
+      "customerEmail": "fatima.zahrani@example.sa",
+      "items": [
+        {
+          "productId": "3",
+          "productName": "Arabian Oud Perfume",
+          "quantity": 2,
+          "price": 450.00,
+          "total": 900.00
+        },
+        {
+          "productId": "5",
+          "productName": "Prayer Rug - Luxury Velvet",
+          "quantity": 3,
+          "price": 85.00,
+          "total": 255.00
+        }
+      ],
+      "subtotal": 1155.00,
+      "tax": 173.25,
+      "total": 1328.25,
+      "status": "pending",
+      "createdAt": "2026-01-21T10:00:00Z"
+    }
+  ]
+}

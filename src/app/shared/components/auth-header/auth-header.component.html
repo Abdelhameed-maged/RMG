@@ -1,0 +1,7 @@
+
+<h1 [class]="titleClasses()">{{ title() }}</h1>
+@if (allowHtml()) {
+  <p [class]="subTitleClasses()" [innerHTML]="subTitle()"></p>
+} @else {
+  <p [class]="subTitleClasses()">{{ subTitle() }}</p>
+}

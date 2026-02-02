@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1>Welcome back, {{ user()?.name || 'User' }}! 👋</h1>
+      <p>Here's what you can do today</p>
+    </div>
+  </header>
+
+  <div class="dashboard-cards">
+    @for (card of cards; track card.title) {
+      <mat-card class="dashboard-card" (click)="navigateTo(card.route)">
+        <mat-card-content>
+          <div class="card-icon" [style.background-color]="card.color">
+            <mat-icon>{{ card.icon }}</mat-icon>
+          </div>
+          <div class="card-details">
+            <h2>{{ card.title }}</h2>
+            <p>{{ card.description }}</p>
+          </div>
+          <button mat-raised-button [style.background-color]="card.color" class="card-action">
+            View {{ card.title }}
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+
+  <div class="info-section">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>info</mat-icon>
+          About This Application
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          This is a modern single-page application (SPA) built with Angular 19 and Angular Material.
+          It demonstrates key features including:
+        </p>
+        <ul>
+          <li>User authentication with route guards</li>
+          <li>Product management with full CRUD operations</li>
+          <li>Invoice creation and management</li>
+          <li>Material Design components and responsive layout</li>
+          <li>Lazy loading and code splitting for optimal performance</li>
+          <li>JSON Server for simulated backend API</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

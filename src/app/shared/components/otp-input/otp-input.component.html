@@ -1,0 +1,24 @@
+<div class="otp-wrapper">
+  @if (label()) {
+    <label class="otp-label">{{ label() }}</label>
+  }
+  <div class="otp-inputs">
+    @for (index of getIndices(); track index) {
+      <input
+        #otpInput
+        type="text"
+        inputmode="numeric"
+        maxlength="1"
+        [value]="otpValues()[index]"
+        (input)="onInput($event, index)"
+        (keydown)="onKeyDown($event, index)"
+        (paste)="onPaste($event)"
+        class="otp-input"
+        [attr.data-index]="index"
+      />
+    }
+  </div>
+  @if (formControl().errors && (formControl().touched || formControl().dirty)) {
+    <span class="error-message">Please enter a valid OTP</span>
+  }
+</div>

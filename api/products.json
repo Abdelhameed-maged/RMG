@@ -1,0 +1,89 @@
+export default function handler(req, res) {
+  const products = [
+    {
+      "id": 1,
+      "name": "Premium Ajwa Dates",
+      "description": "Premium quality Ajwa dates from Madinah, 1kg package",
+      "price": 85,
+      "sku": "DATES-AJW-001",
+      "category": "Food & Beverages",
+      "stock": 50
+    },
+    {
+      "id": 2,
+      "name": "Traditional Oud Perfume",
+      "description": "Authentic Arabian oud perfume, 50ml bottle",
+      "price": 450,
+      "sku": "PERF-OUD-001",
+      "category": "Perfumes & Cosmetics",
+      "stock": 25
+    },
+    {
+      "id": 3,
+      "name": "White Thobe",
+      "description": "Traditional white thobe for men, high quality fabric",
+      "price": 180,
+      "sku": "CLOTH-THB-001",
+      "category": "Clothing",
+      "stock": 40
+    },
+    {
+      "id": 4,
+      "name": "Prayer Rug",
+      "description": "Premium quality prayer rug with Islamic patterns",
+      "price": 120,
+      "sku": "HOME-RUG-001",
+      "category": "Home & Decor",
+      "stock": 60
+    },
+    {
+      "id": 5,
+      "name": "Zamzam Water",
+      "description": "Authentic Zamzam water, 5 liters",
+      "price": 30,
+      "sku": "BEV-ZAM-001",
+      "category": "Food & Beverages",
+      "stock": 100
+    },
+    {
+      "id": 6,
+      "name": "Sidr Honey",
+      "description": "Pure Sidr honey from Yemen, 500g jar",
+      "price": 220,
+      "sku": "FOOD-HON-001",
+      "category": "Food & Beverages",
+      "stock": 35
+    },
+    {
+      "id": 7,
+      "name": "Arabic Coffee Set",
+      "description": "Traditional Arabic coffee set with dallah and cups",
+      "price": 350,
+      "sku": "HOME-COF-001",
+      "category": "Home & Decor",
+      "stock": 20
+    },
+    {
+      "id": 8,
+      "name": "Islamic Calligraphy Art",
+      "description": "Framed Islamic calligraphy wall art, 60x80cm",
+      "price": 280,
+      "sku": "ART-CAL-001",
+      "category": "Home & Decor",
+      "stock": 15
+    }
+  ];
+
+  if (req.method === 'GET') {
+    res.status(200).json(products);
+  } else if (req.method === 'POST') {
+    const newProduct = {
+      id: products.length + 1,
+      ...req.body
+    };
+    products.push(newProduct);
+    res.status(201).json(newProduct);
+  } else {
+    res.status(405).json({ message: 'Method not allowed' });
+  }
+}

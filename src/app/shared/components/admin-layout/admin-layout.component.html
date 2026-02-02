@@ -1,0 +1,22 @@
+<div class="admin-layout">
+  <app-sidebar 
+    [links]="sidebarLinks()" 
+    [collapsed]="sidebarCollapsed()"
+    class="admin-sidebar"
+  />
+  
+  <div class="admin-main">
+    <header class="admin-header">
+      @if (showBreadcrumb()) {
+        <app-breadcrumb />
+      }
+      <div class="admin-header-actions">
+        <ng-content select="[header]"></ng-content>
+      </div>
+    </header>
+    
+    <main class="admin-content">
+      <ng-content></ng-content>
+    </main>
+  </div>
+</div>

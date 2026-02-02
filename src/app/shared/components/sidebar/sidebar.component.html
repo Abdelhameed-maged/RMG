@@ -1,0 +1,72 @@
+<aside class="sidebar" [class.collapsed]="collapsed()">
+  <nav class="sidebar-nav">
+    <ul class="sidebar-list">
+      @for (link of links(); track link.label) {
+        <li class="sidebar-item">
+          @if (hasChildren(link)) {
+            <!-- Parent item with children -->
+            <button 
+              class="sidebar-link sidebar-parent" 
+              (click)="toggleExpand(link.label)"
+              [class.expanded]="isExpanded(link.label)"
+            >
+              @if (link.icon) {
+                <app-icon 
+                  [name]="link.icon" 
+                  [size]="{ width: '20px', height: '20px' }"
+                  class="sidebar-icon"
+                />
+              }
+              <span class="sidebar-label">{{ link.label }}</span>
+              <app-icon 
+                [name]="isExpanded(link.label) ? 'chevron-down' : 'chevron-right'" 
+                [size]="{ width: '16px', height: '16px' }"
+                class="sidebar-toggle-icon"
+              />
+            </button>
+            
+            <!-- Children -->
+            @if (isExpanded(link.label)) {
+              <ul class="sidebar-submenu">
+                @for (child of link.children; track child.label) {
+                  <li class="sidebar-subitem">
+                    <a 
+                      [routerLink]="child.route" 
+                      routerLinkActive="active"
+                      class="sidebar-link sidebar-child"
+                    >
+                      @if (child.icon) {
+                        <app-icon 
+                          [name]="child.icon" 
+                          [size]="{ width: '18px', height: '18px' }"
+                          class="sidebar-icon"
+                        />
+                      }
+                      <span class="sidebar-label">{{ child.label }}</span>
+                    </a>
+                  </li>
+                }
+              </ul>
+            }
+          } @else {
+            <!-- Single link without children -->
+            <a 
+              [routerLink]="link.route" 
+              routerLinkActive="active"
+              class="sidebar-link"
+            >
+              @if (link.icon) {
+                <app-icon 
+                  [name]="link.icon" 
+                  [size]="{ width: '20px', height: '20px' }"
+                  class="sidebar-icon"
+                />
+              }
+              <span class="sidebar-label">{{ link.label }}</span>
+            </a>
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+</aside>

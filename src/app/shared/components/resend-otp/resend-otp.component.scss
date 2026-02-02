@@ -1,0 +1,28 @@
+.resend-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--spacing-md);
+  font-size: var(--font-sm);
+  margin-bottom: 6px;
+  margin-top: calc(-1 * var(--spacing-3xl) + 20px);
+}
+
+.resend-text {
+  color: var(--text-tertiary);
+}
+
+.resend-link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

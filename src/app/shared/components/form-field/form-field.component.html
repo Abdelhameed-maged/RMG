@@ -1,0 +1,59 @@
+<div class="input-wrapper">
+  @if (label()) {
+    <div class="input-label-wrapper">
+    <label class="input-label">
+      {{ label() }}
+      @if (required()) {
+        <span class="required-indicator">*</span>
+      }
+    </label>
+     @if (labelAction()) {
+    <app-primary-button
+      [type]="'button'"
+      [size]="'sm'"
+      [variant]="'link'"
+      (clicked)="labelAction()!()"
+    >{{ labelActionText() }}</app-primary-button>
+     }
+    </div>
+  }
+  <div class="input-field-wrapper">
+    <!-- @defer required: Prevents NG01203 (no value accessor) by delaying FormControl binding until after component initialization -->
+    @defer {
+      <input
+        [type]="inputType()"
+        [placeholder]="placeholder()"
+        [formControl]="formControl()"
+        [disabled]="disabled()"
+        [required]="required()"
+        (input)="onInput($event)"
+        [class.error]="shouldShowError()"
+        class="input-field"
+      />
+    }
+    @if (type() === 'password') {
+      <app-primary-button
+       class="password-toggle"
+        [type]="'button'"
+        [size]="'sm'"
+        [variant]="'link'"
+        (clicked)="togglePasswordVisibility()"
+      >
+      @if (!showPassword()) {
+        <app-icon
+          [name]="'eye'"
+          [size]="{ width: '20px', height: '20px' }"
+        ></app-icon>
+      } @else {
+        <app-icon
+          [name]="'closed-eye'"
+          [size]="{ width: '20px', height: '20px' }"
+        ></app-icon>
+      }
+    </app-primary-button>
+    }
+  </div>
+  <span class="error-message" [class.visible]="shouldShowError()">
+    {{ shouldShowError() ? getErrorMessage() : '&nbsp;' }}
+  </span>
+</div>

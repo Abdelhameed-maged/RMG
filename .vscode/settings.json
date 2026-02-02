@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^npm uninstall @angular/material @angular/cdk @angular/animations; npm install @angular/material@19\\.2\\.0 @angular/cdk@19\\.2\\.0 @angular/animations@19\\.2\\.0 --legacy-peer-deps$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

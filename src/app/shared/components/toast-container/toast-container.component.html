@@ -1,0 +1,9 @@
+<div class="toast-container">
+  @for (toast of toasts(); track toast.id) {
+    <app-feedback-message
+      [message]="toast.message"
+      [type]="toast.type"
+      (click)="onDismiss(toast.id)"
+    />
+  }
+</div>
